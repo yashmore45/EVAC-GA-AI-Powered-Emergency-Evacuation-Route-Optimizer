@@ -1,2 +1,172 @@
-# EVAC-GA-AI-Powered-Emergency-Evacuation-Route-Optimizer
-AI-powered emergency evacuation route optimizer using Genetic Algorithms to find safer and more efficient routes by considering distance, travel time, traffic congestion, safety risks, and blocked roads. Built with Python, Streamlit, and NetworkX.
+# EVAC-GA - AI-Powered Emergency Evacuation Route Optimizer
+
+EVAC-GA is a Python-based application that uses a Genetic Algorithm to find suitable evacuation routes during simulated emergency situations. It considers factors such as distance, travel time, traffic congestion, safety risks, and blocked roads to identify a better route.
+
+The project uses Streamlit to provide an interactive dashboard where users can simulate emergency scenarios, visualize routes, compare results, and understand how the algorithm selects an evacuation path.
+
+## Features
+
+- Simulates a city road network using NetworkX.
+- Models road blockages, traffic congestion, and safety hazards.
+- Uses a Genetic Algorithm to optimize evacuation routes.
+- Considers distance, travel time, congestion, and risk.
+- Implements selection, crossover, mutation, and elitism.
+- Displays the optimized route using interactive visualizations.
+- Tracks the algorithm's performance across generations.
+- Compares the optimized route with the shortest-distance route.
+- Explains the factors influencing route selection.
+- Allows users to download route results as a CSV file.
+- Provides interactive controls for modifying simulation parameters.
+
+## How It Works
+
+The application represents a city as a graph, where nodes represent road junctions and edges represent roads connecting them. Each road contains information such as distance, speed, congestion, safety risk, and blockage status.
+
+After creating the road network, the application simulates emergency conditions and generates possible evacuation routes. The Genetic Algorithm evaluates these routes and improves them over multiple generations to find a suitable solution.
+
+The main steps are:
+
+1. Generate a simulated road network.
+2. Introduce road blockages, congestion, and hazards.
+3. Generate possible evacuation routes.
+4. Calculate the fitness score for each route.
+5. Apply selection, crossover, mutation, and elitism.
+6. Repeat the optimization process for multiple generations.
+7. Display the best feasible route and its performance metrics.
+
+## Genetic Algorithm
+
+The Genetic Algorithm is used to explore different evacuation routes and select a route with a lower fitness score.
+
+The fitness function considers:
+
+- Distance travelled
+- Estimated travel time
+- Traffic congestion
+- Safety risk
+- Penalties for blocked roads, where applicable
+
+The algorithm uses selection to choose promising routes, crossover to combine route segments, mutation to explore alternatives, and elitism to preserve good solutions.
+
+A lower fitness score indicates a better route according to the selected optimization weights.
+
+## Technologies Used
+
+- Python
+- Streamlit
+- NetworkX
+- NumPy
+- Pandas
+- Plotly
+- Genetic Algorithm
+
+## Dashboard
+
+The application provides different sections to explore the results:
+
+- **Emergency Route Map:** Displays the road network, blocked roads, and selected evacuation route.
+- **GA Performance:** Shows the optimization progress across generations.
+- **Route Comparison:** Compares the optimized route with a shortest-distance baseline.
+- **Route Analysis:** Explains how different factors contribute to the route's fitness score.
+- **Export Results:** Allows users to download route information for further analysis.
+
+Users can also change simulation settings, Genetic Algorithm parameters, and optimization weights through the dashboard.
+
+## Installation and Setup
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/YOUR-USERNAME/EVAC-GA.git
+cd EVAC-GA
+```
+
+**2. Create a virtual environment**
+
+```bash
+python -m venv venv
+```
+
+Activate it on Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+**3. Install the required packages**
+
+```bash
+pip install -r requirements.txt
+```
+
+If you need to create a `requirements.txt` file, add:
+
+```text
+streamlit
+numpy
+pandas
+networkx
+plotly
+```
+
+**4. Run the application**
+
+```bash
+streamlit run app.py
+```
+
+The dashboard will open at `http://localhost:8501`.
+
+## Example Scenario
+
+Suppose an emergency occurs in a simulated city where some roads are blocked and others have heavy traffic or increased safety risks.
+
+A route based only on distance might pass through a congested or risky area. EVAC-GA evaluates alternative routes and attempts to find a more suitable path based on distance, estimated travel time, congestion, and safety risk.
+
+The selected route and its performance metrics are then displayed on the dashboard.
+
+## Project Structure
+
+```text
+EVAC-GA/
+├── app.py
+├── requirements.txt
+├── README.md
+└── optimized_evacuation_route.csv
+```
+
+The CSV file is generated by the application if route export is implemented and does not need to be included in the repository beforehand.
+
+## Applications
+
+- Emergency evacuation planning
+- Disaster management simulations
+- Traffic-aware route optimization
+- Hospital and campus evacuation studies
+- Smart-city transportation systems
+- Risk-aware navigation research
+
+## Future Improvements
+
+- Integration with real-world maps and GIS data.
+- Live traffic and road-closure information.
+- Weather and disaster data integration.
+- Population-density and evacuation-demand analysis.
+- Real-time GPS-based navigation.
+- Machine learning for risk prediction.
+- Comparison with algorithms such as Dijkstra's and A*.
+- Cloud deployment and improved performance evaluation.
+
+## Limitations
+
+This project uses a simulated road network and modeled traffic and safety conditions. It does not currently provide verified real-time road information or validated emergency navigation.
+
+The Genetic Algorithm may not always find the globally optimal route, and the quality of its results depends on the simulation, fitness function, and algorithm parameters.
+
+This project is intended for academic and educational purposes and should not be used for actual emergency decisions.
+
+## Author
+
+**Yash More**
+
+GitHub: https://github.com/yashmore45
